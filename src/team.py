@@ -5,11 +5,13 @@ from src.player import Player
 
 class Team:
 
+    # Constructor
     def __init__(self, name, country):
         self.name = name
         self.country = country
         self.teamPlayers: List[Player] = []
 
+    # Addplayer function
     def add_player(self, name,age,height,weight):
         new_player = Player(name,age,height,weight)
         self.teamPlayers.append(new_player)

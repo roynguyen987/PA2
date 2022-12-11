@@ -2,6 +2,7 @@
 
 
 class ClientWorker:
+    # Constructor
     def __init__(self, connection, tournament, id):
         self.connection = connection
         self.id = id

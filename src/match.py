@@ -1,21 +1,24 @@
 from typing import List
 import datetime
 from src.referee import Referee
+from src.team import Team
 
 
 class Match:
 
+    # Constructor
     def __init__(self, date_time, teamA, teamB):
         self.date_time = date_time
         self.scoreTeamA = 0
         self.scoreTeamB = 0
-        self.teamA = None
-        self.teamB = None
+        self.teamA = Team("","")
+        self.teamB = Team("","")
         self.matchRefs= list()
         self.teamALU = None
         self.teamBLU = None
 
 
+    # Add functions
     def add_player(self, player, team):
         team.add_player(player.name, player.age, player.height, player.weight)
 

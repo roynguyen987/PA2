@@ -2,6 +2,7 @@
 
 class Player:
 
+    # Construcotr
     def __init__(self,name,age,height,weight):
         self.name = name
         self.age = age
@@ -9,6 +10,7 @@ class Player:
         self.weight = weight
         self.player_team = None
 
+    # Getters
     def get_name(self):
         return self.name
 

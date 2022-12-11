@@ -13,17 +13,28 @@ class Tournament:
     name = ""
     start_date = ""
 
+    # Constructor
     def __init__(self, name, start_date, end_date):
         self.name = name
         self.start_date = start_date
         self.end_date = end_date
-        self.teams = list()
-        self.players: list()
-        self.matches = list()
-        self.line_ups: list()
-        self.referees = list()
-        self.countries = list()
+        self.teamPlayers: List[Player] = []
+        self.teams: List[Team] = []
+        self.players: List[Player] = []
+        self.matches: List[Match] = []
+        self.line_ups: List[LineUp] = []
+        self.referees: List[Referee] = []
+        self.countries: List[Country] = []
 
+    # Getters and Setters
+    def set_name(self, name):
+        self.name = name
+    def set_start_date(self, start_date):
+        self.start_date = start_date
+    def set_end_date(self, end_date):
+        self.end_date = end_date
+
+    # Add functions
     def add_country(self, country_name):
         self.countries.append(Country(country_name))
 
@@ -49,6 +60,7 @@ class Tournament:
                     if ref.name.lower() == ref_name:
                         match.add_referee(ref)
 
+    # Other functions
     def set_match_score(self, date_time1, team_a_score, team_b_score):
         for match in self.matches:
             if match.date_time == date_time1:
